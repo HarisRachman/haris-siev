@@ -1,0 +1,13 @@
+<?php
+include "../../koneksi.php";
+
+$id = $_GET["id"];
+$sql = "DELETE FROM candidates WHERE id = '{$id}'";
+$run_sql = mysqli_query($conn, $sql);
+if ($run_sql) {
+    echo json_encode(["success"=>true, "message"=>"Produk Kandidat berhasil Dihapus"]);
+} else {
+    echo json_encode(["success"=>false, "message"=>"Server Problem"]);
+}
+
+?>
